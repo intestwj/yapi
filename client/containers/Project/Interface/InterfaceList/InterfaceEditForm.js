@@ -269,7 +269,7 @@ class InterfaceEditForm extends Component {
             isHaveContentType = false;
           if (values.req_body_type === 'form') {
             values.req_body_form.forEach(item => {
-              if (item.type === 'file') {
+              if (item.type === 'file' || (item.value !== undefined && /data.*base64/.test(item.value))) {
                 isfile = true;
               }
             });
